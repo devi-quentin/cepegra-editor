@@ -7,7 +7,7 @@ const Scene = () => {
       <a-entity sound="src: #sound"></a-entity>
       <a-entity sound="src: #sound2"></a-entity>
 
-      <a-circle rotation="-90 0 0" radius="20"  src="#my-texture" repeat="50 50">
+      <a-circle rotation="-90 0 0" radius="20"  src="#my-texture" repeat="50 50" roughness="100">
 
       </a-circle>
 
