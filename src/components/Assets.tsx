@@ -2,12 +2,13 @@ const Assets = () => {
 
   return (
     <>
-      <img id="sky" src="assets/images/clouds-sky-anime.jpg"></img>
+      <img id="sky" src="assets/images/clouds-sky-anime.jpg" alt="sky"></img>
       <a-sound
         id="sound"
         src="assets/sound/pikachu.mp3"
         preload="auto"
       ></a-sound>
+      <img id="my-texture" src="assets/images/grass.jpeg"  alt="texture d'image"></img>
       <a-sound
         id="sound2"
         src="assets/sound/arene_theme.mp3"
