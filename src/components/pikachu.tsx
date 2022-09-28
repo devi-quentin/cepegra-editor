@@ -6,7 +6,8 @@ const Pikachu = () => {
         gltf-model="#pika"
         animation-mixer="clip:Idle; 
         repetitions:Infinity"
-        position="0 -1.56886 -2.1"
+        position="0 0 -3"
+        scale="1.5 1.5"
       ></a-entity>
     </>
   );
