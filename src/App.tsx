@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "aframe";
+import Assets from "./components/Assets";
+import Scene from "./components/Scene";
 
 function App() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="App">
       <a-scene>
-        <a-box src="https://i.imgur.com/mYmmbrp.jpg" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
-        <a-sky color="#222" src="/assets/sky2.png"></a-sky>
+        <a-assets>
+          <Assets />
+        </a-assets>
+
+        {mounted ? <Scene /> : ""}
       </a-scene>
     </div>
   );
