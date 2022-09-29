@@ -1,1 +1,14 @@
+body {
+    position: absolute;
+    z-index: 0;
+}
 
+canvas {
+    z-index: 1;
+    position: absolute;
+}
+
+.menu {
+    z-index: 2;
+    position: absolute;
+}

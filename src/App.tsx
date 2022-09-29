@@ -20,6 +20,8 @@ function App() {
 
         {mounted ? <Scene /> : ""}
       </a-scene>
+
+      <div className="menu">COUCOU</div>
     </div>
   );
 }
