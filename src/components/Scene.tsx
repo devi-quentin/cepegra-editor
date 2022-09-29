@@ -1,20 +1,36 @@
+import { useState } from "react";
 import Pikachu from "./pikachu";
 
+let holding = false
+
+while (holding) {
+  console.log('mouseUp ok')
+}
+
 AFRAME.registerComponent("cursor-listener", {
-  update: function () {
+  init: function () {
     let position = this.el.getAttribute("position")
-    this.el.addEventListener("click", function (evt) {
-      this.setAttribute("position", {
-        x: evt.detail.intersection.point.x,
-        y: evt.detail.intersection.point.y,
-        z: position.z
-      });
+    this.el.addEventListener("mousedown", function (evt) {
+      holding = true     
+      console.log("mouseUp", holding)
+      // this.setAttribute("position", {
+      //   x: evt.detail.intersection.point.x,
+      //   y: evt.detail.intersection.point.y,
+      //   z: position.z
+      // });
       // console.log("I was clicked at: ", evt.detail.intersection.point);
     });
+    
+    this.el.addEventListener("mouseup", function (evt) {
+      holding = false   
+      console.log("mouseUp", holding)
+    })
   },
 });
 
 const Scene = () => {
+  const [mousePos, setMousePos] = useState({x: 0,y:0})
+  const [mouseUp, setMouseUp] = useState(false)
   return (
     <>
       <a-sky src="#sky"></a-sky>
