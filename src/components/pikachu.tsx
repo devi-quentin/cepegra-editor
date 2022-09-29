@@ -22,7 +22,7 @@ const Pikachu = () => {
         repetitions:Infinity"
         position="0 0 -3"
         scale="1.5 1.5 1.5"
-        tourbillon-folie
+        // tourbillon-folie
       ></a-entity>
     </>
   );
