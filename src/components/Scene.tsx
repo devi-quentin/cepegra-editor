@@ -11,7 +11,7 @@ const Scene = () => {
 
       </a-circle>
 
-      <a-camera class="camera" rotation-test></a-camera>
+      <a-camera class="camera" look-controls position="0 1.5 0"></a-camera>
       
       <Pikachu />      
     </>
