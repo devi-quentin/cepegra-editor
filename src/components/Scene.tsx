@@ -1,5 +1,19 @@
 import Pikachu from "./pikachu";
 
+AFRAME.registerComponent("cursor-listener", {
+  update: function () {
+    let position = this.el.getAttribute("position")
+    this.el.addEventListener("click", function (evt) {
+      this.setAttribute("position", {
+        x: evt.detail.intersection.point.x,
+        y: evt.detail.intersection.point.y,
+        z: position.z
+      });
+      // console.log("I was clicked at: ", evt.detail.intersection.point);
+    });
+  },
+});
+
 const Scene = () => {
   return (
     <>
@@ -26,6 +40,7 @@ const Scene = () => {
 
       <a-entity
         id="box"
+        cursor-listener
         geometry="primitive: box"
         material="color: blue"
         position="2 1 -4"
