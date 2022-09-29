@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "aframe";
+import "aframe-extras.animation-mixer";
 import Assets from "./components/Assets";
 import Scene from "./components/Scene";
 
