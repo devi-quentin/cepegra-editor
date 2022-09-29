@@ -38,6 +38,7 @@ declare global {
       "a-triangle": aframeElement;
       "a-video": aframeElement;
       "a-videosphere": aframeElement;
+      "a-mixin": aframeElement;
     }
   }
 }
