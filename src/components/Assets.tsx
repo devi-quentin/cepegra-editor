@@ -15,10 +15,16 @@ const Assets = () => {
         autoplay="true"
         preload="auto"
       ></a-sound>
-      <a-asset-item id="pika" src="assets/images/pikachu2.glb"></a-asset-item>
       <a-asset-item
         id="dig"
         src="assets/images/diglett_pokemon.glb"
+      ></a-asset-item>
+
+      <a-asset-item id="pika" src="assets/images/pikachu2.glb"></a-asset-item>
+      {/* CHAPEAU */}
+      <a-asset-item
+        id="hat"
+        src="assets/low_poly_hat_1.glb"
       ></a-asset-item>
 
       <a-asset-item id="ville" src="assets/arene/scene.gltf"></a-asset-item>
