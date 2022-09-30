@@ -16,13 +16,12 @@ const Pikachu = () => {
   return (
     <>
       <a-entity
-        id={"pika"}
+        dragndrop
         gltf-model="#pika"
-        animation-mixer="clip:Idle; 
-        repetitions:Infinity"
-        position="0 0 -3"
-        scale="1.5 1.5 1.5"
-        // tourbillon-folie
+        animation-mixer="clip:Idle;
+      repetitions:Infinity"
+        position="0 -0.5 0"
+        scale="1 1 1"
       ></a-entity>
     </>
   );
