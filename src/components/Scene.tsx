@@ -1,5 +1,17 @@
 import { useState } from "react";
-import Pikachu from "./pikachu";
+
+
+AFRAME.registerComponent('tourbillon-folie', {
+  tick: function () {
+    let rotationTmp =  {x: 0, y: 0, z: 0};
+    var rotation = this.el.getAttribute('rotation');
+    console.log(this.el.object3D.rotation);
+    // rotationTmp.x = rotation.x + 0.1;
+    rotationTmp.y = rotation.y + 20;
+    // rotationTmp.z = rotation.z + 0.2;
+    this.el.setAttribute('rotation', rotationTmp);
+  }
+});
 
 AFRAME.registerSystem("track-cursor", {
   init: function () {
@@ -9,7 +21,6 @@ AFRAME.registerSystem("track-cursor", {
 
 AFRAME.registerComponent("track-cursor", {
   init: function () {
-    console.log("aaa");
     this.el.addEventListener("mousedown", (e) => {
       if (this.el.is("cursor-hovered")) {
         this.el.sceneEl.camera.el.setAttribute("look-controls", {
@@ -29,7 +40,7 @@ AFRAME.registerComponent("track-cursor", {
   },
 });
 
-AFRAME.registerComponent("dragndrop", {
+AFRAME.registerComponent("choppe-parlecolback", {
   dependencies: ["track-cursor"],
   init: function () {
     this.range = 0;
@@ -79,7 +90,7 @@ const Scene = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [mouseUp, setMouseUp] = useState(false);
   return (
-    <>
+    <>  
       <a-sky src="#sky"></a-sky>
       {/* <a-entity sound="src: #sound"></a-entity>
       <a-entity sound="src: #sound2"></a-entity> */}
@@ -107,26 +118,35 @@ const Scene = () => {
       {/* HITBOX PERSONNAGE */}
       <a-entity
         id="box"
-        dragndrop
+        choppe-parlecolback
         geometry="primitive: box"
         material="opacity: 0.5"
         position="2 1 -4"
         scale="1.5 1.5 1.5"
       >
         {/* PERSONNAGE */}
-        <Pikachu />
       </a-entity>
 
       <a-entity
-        dragndrop
+      choppe-parlecolback
         gltf-model="#hat"
         position="0 4 0"
         scale=".2 .2 .2"
       ></a-entity>
+      <a-entity
       
+        animation-mixer="clip:mixamo.com;
+      repetitions:Infinity"
+      choppe-parlecolback
+      tourbillon-folie
+        gltf-model="#fish"
+        position="4 2 0"
+        scale="0.52 0.5 0.52"
+      ></a-entity>
+
       {/* SPHERE ROUGE */}
       <a-entity
-        dragndrop
+      choppe-parlecolback
         geometry="primitive: sphere"
         material="color: red"
         position="-2 1 -4"
