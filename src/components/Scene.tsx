@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Pikachu from "./pikachu";
-let holding = false
-
 
 AFRAME.registerSystem("track-cursor", {
   init: function() {
@@ -13,17 +11,17 @@ AFRAME.registerComponent("track-cursor", {
   init: function() {
     this.el.addEventListener("mousedown", e => {
       if (this.el.is("cursor-hovered")) {
-        // this.el.sceneEl.camera.el.setAttribute("look-controls", {
-        //   enabled: false
-        // });
+        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+          enabled: false
+        });
         this.el.addState("dragging");
       }
     })
     this.el.addEventListener("mouseup", e => {
       if (this.el.is("dragging")) {
-        // this.el.sceneEl.camera.el.setAttribute("look-controls", {
-        //   enabled: true
-        // });
+        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+          enabled: true
+        });
         this.el.removeState("dragging");
       }
     })
@@ -93,7 +91,7 @@ const Scene = () => {
         roughness="50"
       ></a-circle>
 
-      <a-camera class="camera" look-controls position="0 1.5 0">
+      <a-camera class="camera"  position="0 1.5 0">
         <a-entity        
         cursor="fuse: true; fuseTimeout: 500;"
         
