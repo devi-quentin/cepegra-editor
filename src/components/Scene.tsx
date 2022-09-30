@@ -5,9 +5,9 @@ AFRAME.registerComponent('tourbillon-folie', {
   tick: function () {
     let rotationTmp =  {x: 0, y: 0, z: 0};
     var rotation = this.el.getAttribute('rotation');
-    console.log(this.el.object3D.rotation);
+
     // rotationTmp.x = rotation.x + 0.1;
-    rotationTmp.y = rotation.y + 20;
+    rotationTmp.y = rotation.y + 20000;
     // rotationTmp.z = rotation.z + 0.2;
     this.el.setAttribute('rotation', rotationTmp);
   }
