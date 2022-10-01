@@ -26,7 +26,7 @@ const Assets = () => {
         src="assets/low_poly_hat_1.glb"
       ></a-asset-item>
       <a-asset-item
-        id="fish"
+        id="militaire"
         src="assets/fish.glb"
       ></a-asset-item>
 
