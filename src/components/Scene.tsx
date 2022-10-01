@@ -1,17 +1,18 @@
 import { useState } from "react";
 
+// AFRAME.registerComponent('tourbillon-folie', {
+//   tick: function () {
+//     let rotationTmp =  {x: 0, y: 0, z: 0};
+//     var rotation = this.el.getAttribute('rotation');
+//     this.el.addEventListener("mousedown", (e) => {
+//     // rotationTmp.x = rotation.x + 0.1;
+//     rotationTmp.y = rotation.y + 20000000000;
+//     // rotationTmp.z = rotation.z + 0.2;
+//     this.el.setAttribute('rotation', rotationTmp);
+//   });
 
-AFRAME.registerComponent('tourbillon-folie', {
-  tick: function () {
-    let rotationTmp =  {x: 0, y: 0, z: 0};
-    var rotation = this.el.getAttribute('rotation');
-
-    // rotationTmp.x = rotation.x + 0.1;
-    rotationTmp.y = rotation.y + 20000;
-    // rotationTmp.z = rotation.z + 0.2;
-    this.el.setAttribute('rotation', rotationTmp);
-  }
-});
+//   }
+// });
 
 AFRAME.registerSystem("track-cursor", {
   init: function () {
@@ -82,13 +83,18 @@ AFRAME.registerComponent("choppe-parlecolback", {
       this.updateDirection();
       this.updateTarget();
       this.el.object3D.position.copy(this.target);
+      // the code below allows us to have a rotation when clicked
+      let rotationTmp =  {x: 0, y: 0, z: 0};
+      var rotation = this.el.getAttribute('rotation');
+      // rotationTmp.x = rotation.x + 0.1;
+      rotationTmp.y = rotation.y + 1;
+      // rotationTmp.z = rotation.z + 0.2;
+      this.el.setAttribute('rotation', rotationTmp);
     }
   },
 });
 
 const Scene = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [mouseUp, setMouseUp] = useState(false);
   return (
     <>  
       <a-sky src="#sky"></a-sky>
@@ -135,7 +141,7 @@ const Scene = () => {
       ></a-entity>
       <a-entity
       
-        animation-mixer="clip:mixamo.com;
+      animation-mixer="clip:mixamo.com;
       repetitions:Infinity"
       choppe-parlecolback
       tourbillon-folie
