@@ -3,6 +3,7 @@ import "aframe";
 import "aframe-extras.animation-mixer";
 import Assets from "./components/Assets";
 import Scene from "./components/Scene";
+import './components/dragndrop'
 
 function App() {
   const [mounted, setMounted] = useState(false);
