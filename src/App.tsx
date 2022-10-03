@@ -23,11 +23,15 @@ function App() {
       </a-scene>
 
       <div className="menu">
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
+       
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+        <div className="item" draggable="true"></div>
+     
       </div>
     </div>
   );
