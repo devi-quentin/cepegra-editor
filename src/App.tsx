@@ -17,22 +17,13 @@ function App() {
       <a-scene>
         <a-assets>
           <Assets />
+         
         </a-assets>
-
+        
         {mounted ? <Scene /> : ""}
       </a-scene>
 
-      <div className="menu">
-       
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-        <div className="item" draggable="true"></div>
-     
-      </div>
+      
     </div>
   );
 }

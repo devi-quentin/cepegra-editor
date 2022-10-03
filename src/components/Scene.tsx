@@ -3,7 +3,9 @@ import { useState } from "react";
 const Scene = () => {
   return (
     <>  
-      <a-sky src="#sky"></a-sky>
+      <a-sky src="#sky">
+        
+      </a-sky>
       {/* <a-entity sound="src: #sound"></a-entity>
       <a-entity sound="src: #sound2"></a-entity> */}
 
@@ -14,10 +16,19 @@ const Scene = () => {
         src="#my-texture"
         repeat="50 50"
         roughness="50"
+        fog="true"
       ></a-circle>
 
       {/* CAMERA */}
-      <a-camera class="camera" position="0 1.5 0">
+      <a-camera class="camera" position="0 1.5 0" look-controls>
+
+      <a-plane width="0.03" height="0.12" position="-0.1 0 -.1" opacity="0.5">
+        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
+        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
+        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
+        
+      </a-plane>
+
       </a-camera>
       
       {/* HITBOX PERSONNAGE */}
@@ -28,6 +39,7 @@ const Scene = () => {
         material="opacity: 0.5"
         position="2 1 -4"
         scale="1.5 1.5 1.5"
+        
       ></a-entity>
 
         {/* CHAPEAU */}
@@ -45,6 +57,7 @@ const Scene = () => {
         gltf-model="#militaire"
         position="4 2 0"
         scale="0.52 0.5 0.52"
+        wireframe="true"
       ></a-entity>
 
       {/* SPHERE ROUGE */}
@@ -52,8 +65,14 @@ const Scene = () => {
         dragdrop
         geometry="primitive: sphere"
         material="color: red"
-        position="-2 1 -4"
+        position="-2 2 -4"
+        scale="1 1.6 1"
+        
       ></a-entity>
+
+      
+
+       
     </>
   );
 };
