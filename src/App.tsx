@@ -22,7 +22,13 @@ function App() {
         {mounted ? <Scene /> : ""}
       </a-scene>
 
-      <div className="menu">COUCOU</div>
+      <div className="menu">
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+      </div>
     </div>
   );
 }
