@@ -16,18 +16,28 @@ const Scene = () => {
         src="#my-texture"
         repeat="50 50"
         roughness="50"
-        fog="true"
+        
       ></a-circle>
 
       {/* CAMERA */}
       <a-camera class="camera" position="0 1.5 0" look-controls>
 
-      <a-plane width="0.03" height="0.12" position="-0.1 0 -.1" opacity="0.5">
-        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
-        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
-        <a-plane width="0.045" height="0.045" position="-0.1 0 -.1" color="#fff"></a-plane>
+      <a-gui-flex-container 
+        flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.5" width="0.3" height="1.5" 
+        panel-color="#c1c1c1" 
+        panel-rounded="0.05"
+	      position="-.95 0 -1" rotation="0 0 0">
+
         
-      </a-plane>
+		
+
+        </a-gui-flex-container>
+        
+        
+
+
+        
+  
 
       </a-camera>
       
@@ -70,9 +80,9 @@ const Scene = () => {
         
       ></a-entity>
 
-      
 
-       
+
+      
     </>
   );
 };

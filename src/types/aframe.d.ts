@@ -39,6 +39,12 @@ declare global {
       "a-video": aframeElement;
       "a-videosphere": aframeElement;
       "a-mixin": aframeElement;
+      "a-gui-flex-container": aframeElement;
+      "a-gui-cursor":aframeElement;
+      "a-gui-button":aframeElement;
+      "a-gui-item":aframeElement;
+      "a-gui-label":aframeElement;
+      "a-gui-icon-label-button":aframeElement;
     }
   }
 }
